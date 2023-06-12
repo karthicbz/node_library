@@ -20,7 +20,7 @@ async function main() {
 
 app.use('/public', express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
