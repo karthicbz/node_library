@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 #{title}: #{bookinstance._id}
+    p Do you really want to delete this bookinstance?
+    <hr>
+    form(action="", method="post")
+        div.form-group
+            input#bookinstanceid.form-control(type='hidden' required='true' name='bookinstanceid' value=bookinstance._id)
+        button.btn.btn-danger Delete
