@@ -29,8 +29,10 @@ app.use(
 app.use(compression());
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB =
+const dev_db_url =
   "mongodb+srv://admin:admin123@cluster0.frh5rdd.mongodb.net/local_library?retryWrites=true&w=majority";
+
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 main().catch((err) => console.log(err));
 async function main() {
